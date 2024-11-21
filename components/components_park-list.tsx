@@ -3,51 +3,51 @@ import { ParkCard } from './park-card'
 const mockParks = [
   {
     id: 1,
-    name: "Yellowstone National Park",
-    description: "America's first national park, known for its geothermal features and diverse wildlife.",
-    location: "Wyoming, Montana, Idaho",
+    name: "Parque da Cidade Joventino Silva",
+    description: "O maior parque urbano da cidade de Salvador, com áreas verdes e equipamentos de lazer.",
+    location: "Itaigara, Salvador, BA",
     image: "/placeholder.svg?height=300&width=400",
     events: [
-      { name: "Ranger-led Hike", date: "June 15, 2023" },
-      { name: "Wildlife Photography Workshop", date: "July 2, 2023" }
+      { name: "Aula de Yoga ao ar livre", date: "15 de Junho, 2023" },
+      { name: "Feira de Artesanato", date: "2 de Julho, 2023" }
     ],
     trails: [
-      { name: "Old Faithful Geyser Loop", difficulty: "Easy", length: "1.6 miles" },
-      { name: "Grand Prismatic Spring Overlook Trail", difficulty: "Moderate", length: "1.2 miles" }
+      { name: "Pista de Cooper", difficulty: "Fácil", length: "2.5 km" },
+      { name: "Trilha das Árvores", difficulty: "Moderada", length: "1.8 km" }
     ],
-    workingHours: "Open 24 hours"
+    workingHours: "5h às 22h"
   },
   {
     id: 2,
-    name: "Yosemite National Park",
-    description: "Famous for its giant sequoia trees, waterfalls, and granite cliffs like El Capitan and Half Dome.",
-    location: "California",
+    name: "Parque de Pituaçu",
+    description: "Área de preservação ambiental com lago artificial e ciclovias, ideal para atividades ao ar livre.",
+    location: "Pituaçu, Salvador, BA",
     image: "/placeholder.svg?height=300&width=400",
     events: [
-      { name: "Stargazing Night", date: "June 20, 2023" },
-      { name: "Rock Climbing Clinic", date: "July 10, 2023" }
+      { name: "Passeio de Bicicleta", date: "20 de Junho, 2023" },
+      { name: "Observação de Aves", date: "10 de Julho, 2023" }
     ],
     trails: [
-      { name: "Mist Trail", difficulty: "Strenuous", length: "3 miles" },
-      { name: "Lower Yosemite Fall Trail", difficulty: "Easy", length: "1 mile" }
+      { name: "Ciclovia do Lago", difficulty: "Fácil", length: "5 km" },
+      { name: "Trilha da Mata", difficulty: "Moderada", length: "3 km" }
     ],
-    workingHours: "Open 24 hours"
+    workingHours: "6h às 18h"
   },
   {
     id: 3,
-    name: "Grand Canyon National Park",
-    description: "Home to much of the immense Grand Canyon, with its layered bands of red rock.",
-    location: "Arizona",
+    name: "Jardim Botânico de Salvador",
+    description: "Área de conservação com espécies nativas da Mata Atlântica e espaços educativos.",
+    location: "São Marcos, Salvador, BA",
     image: "/placeholder.svg?height=300&width=400",
     events: [
-      { name: "Geology Talk", date: "June 25, 2023" },
-      { name: "Sunset Photography Tour", date: "July 5, 2023" }
+      { name: "Workshop de Plantas Medicinais", date: "25 de Junho, 2023" },
+      { name: "Visita Guiada", date: "5 de Julho, 2023" }
     ],
     trails: [
-      { name: "Bright Angel Trail", difficulty: "Strenuous", length: "12 miles" },
-      { name: "South Kaibab Trail", difficulty: "Strenuous", length: "7 miles" }
+      { name: "Trilha das Bromélias", difficulty: "Fácil", length: "800m" },
+      { name: "Trilha da Biodiversidade", difficulty: "Moderada", length: "1.2 km" }
     ],
-    workingHours: "Open 24 hours"
+    workingHours: "8h às 17h"
   }
 ]
 
