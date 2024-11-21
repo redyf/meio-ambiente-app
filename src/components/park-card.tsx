@@ -1,38 +1,46 @@
-import { useState } from 'react'
-import { ChevronDown, ChevronUp, Clock, MapPin } from 'lucide-react'
-import { MapView } from './map-view'
-import Link from 'next/link'
+import { useState } from "react";
+import { ChevronDown, ChevronUp, Clock, MapPin } from "lucide-react";
+import { MapView } from "./map-view";
+import Link from "next/link";
+import React from "react";
 
 interface ParkEvent {
-  name: string
-  date: string
+  name: string;
+  date: string;
 }
 
 interface Trail {
-  name: string
-  difficulty: string
-  length: string
+  name: string;
+  difficulty: string;
+  length: string;
 }
 
 interface Park {
-  id: number
-  name: string
-  description: string
-  location: string
-  image: string
-  events: ParkEvent[]
-  trails: Trail[]
-  workingHours: string
+  id: number;
+  name: string;
+  description: string;
+  location: string;
+  image: string;
+  events: ParkEvent[];
+  trails: Trail[];
+  workingHours: string;
 }
 
 export function ParkCard({ park }: { park: Park }) {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [showMap, setShowMap] = useState(false)
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [showMap, setShowMap] = useState(false);
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <Link href={`/park/${park.id}`} className="block hover:opacity-75 transition-opacity">
-        <img src={park.image} alt={park.name} className="w-full h-48 object-cover" />
+      <Link
+        href={`/park/${park.id}`}
+        className="block hover:opacity-75 transition-opacity"
+      >
+        <img
+          src={park.image}
+          alt={park.name}
+          className="w-full h-48 object-cover"
+        />
       </Link>
       <div className="p-4">
         <Link href={`/park/${park.id}`} className="block hover:underline">
@@ -51,8 +59,12 @@ export function ParkCard({ park }: { park: Park }) {
           className="flex items-center text-blue-500 hover:text-blue-700"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          {isExpanded ? 'Show less' : 'Show more'}
-          {isExpanded ? <ChevronUp className="w-4 h-4 ml-1" /> : <ChevronDown className="w-4 h-4 ml-1" />}
+          {isExpanded ? "Show less" : "Show more"}
+          {isExpanded ? (
+            <ChevronUp className="w-4 h-4 ml-1" />
+          ) : (
+            <ChevronDown className="w-4 h-4 ml-1" />
+          )}
         </button>
         {isExpanded && (
           <div className="mt-4">
@@ -76,7 +88,7 @@ export function ParkCard({ park }: { park: Park }) {
               className="flex items-center text-green-500 hover:text-green-700 mt-4"
               onClick={() => setShowMap(!showMap)}
             >
-              {showMap ? 'Hide map' : 'Show map'}
+              {showMap ? "Hide map" : "Show map"}
               <MapPin className="w-4 h-4 ml-1" />
             </button>
             {showMap && (
@@ -88,6 +100,5 @@ export function ParkCard({ park }: { park: Park }) {
         )}
       </div>
     </div>
-  )
+  );
 }
-

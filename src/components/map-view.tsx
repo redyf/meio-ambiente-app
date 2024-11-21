@@ -1,6 +1,8 @@
+import React from "react";
+
 interface MapViewProps {
-  parkName: string
-  location: string
+  parkName: string;
+  location: string;
 }
 
 export function MapView({ parkName, location }: MapViewProps) {
@@ -12,6 +14,5 @@ export function MapView({ parkName, location }: MapViewProps) {
         <p className="text-sm text-gray-400 mt-2">Map placeholder</p>
       </div>
     </div>
-  )
+  );
 }
-
