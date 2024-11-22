@@ -1,4 +1,4 @@
-import { ParkCard } from './park-card'
+import { ParkCard } from './park-card.tsx'
 
 const mockParks = [
   {

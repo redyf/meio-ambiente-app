@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Clock, MapPin } from "lucide-react";
-import { MapView } from "./map-view";
-import Link from "next/link";
+import { MapView } from "./map-view.tsx";
 import React from "react";
 
 interface ParkEvent {
@@ -32,7 +31,7 @@ export function ParkCard({ park }: { park: Park }) {
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden">
-      <Link
+      <a
         href={`/park/${park.id}`}
         className="block hover:opacity-75 transition-opacity"
       >
@@ -41,11 +40,11 @@ export function ParkCard({ park }: { park: Park }) {
           alt={park.name}
           className="w-full h-48 object-cover"
         />
-      </Link>
+      </a>
       <div className="p-4">
-        <Link href={`/park/${park.id}`} className="block hover:underline">
+        <a href={`/park/${park.id}`} className="block hover:underline">
           <h2 className="text-xl font-bold mb-2">{park.name}</h2>
-        </Link>
+        </a>
         <p className="text-gray-600 mb-4">{park.description}</p>
         <div className="flex items-center text-gray-500 mb-2">
           <MapPin className="w-4 h-4 mr-2" />

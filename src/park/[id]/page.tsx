@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { ChevronLeft, MapPin, Clock } from 'lucide-react'
-import Link from 'next/link'
 import { MapView } from '../../../components/map-view'
 
 interface ParkEvent {
@@ -93,10 +92,10 @@ export default function ParkPage({ params }: { params: { id: string } }) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <Link href="/" className="inline-flex items-center text-blue-500 hover:text-blue-700 mb-6">
+      <a href="/" className="inline-flex items-center text-blue-500 hover:text-blue-700 mb-6">
         <ChevronLeft className="w-4 h-4 mr-1" />
         Back to all parks
-      </Link>
+      </a>
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <img src={park.image} alt={park.name} className="w-full h-64 object-cover" />
         <div className="p-6">
