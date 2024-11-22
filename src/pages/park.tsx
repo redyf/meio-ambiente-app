@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { ChevronLeft, MapPin, Clock } from 'lucide-react'
 import { MapView } from '../components/map-view.tsx'
 import { Form, useLoaderData } from "react-router-dom";
+import { mockParks } from '../data/data.js';
 
 interface ParkEvent {
   name: string
@@ -27,57 +28,6 @@ interface Park {
   workingHours: string
 }
 
-const mockParks: Park[] = [
-  {
-    id: 1,
-    name: "Yellowstone National Park",
-    description: "America's first national park, known for its geothermal features and diverse wildlife.",
-    location: "Wyoming, Montana, Idaho",
-    image: "/placeholder.svg?height=300&width=400",
-    events: [
-      { name: "Ranger-led Hike", date: "June 15, 2023" },
-      { name: "Wildlife Photography Workshop", date: "July 2, 2023" }
-    ],
-    trails: [
-      { name: "Old Faithful Geyser Loop", difficulty: "Easy", length: "1.6 miles" },
-      { name: "Grand Prismatic Spring Overlook Trail", difficulty: "Moderate", length: "1.2 miles" }
-    ],
-    workingHours: "Open 24 hours"
-  },
-  {
-    id: 2,
-    name: "Yosemite National Park",
-    description: "Famous for its giant sequoia trees, waterfalls, and granite cliffs like El Capitan and Half Dome.",
-    location: "California",
-    image: "/placeholder.svg?height=300&width=400",
-    events: [
-      { name: "Stargazing Night", date: "June 20, 2023" },
-      { name: "Rock Climbing Clinic", date: "July 10, 2023" }
-    ],
-    trails: [
-      { name: "Mist Trail", difficulty: "Strenuous", length: "3 miles" },
-      { name: "Lower Yosemite Fall Trail", difficulty: "Easy", length: "1 mile" }
-    ],
-    workingHours: "Open 24 hours"
-  },
-  {
-    id: 3,
-    name: "Grand Canyon National Park",
-    description: "Home to much of the immense Grand Canyon, with its layered bands of red rock.",
-    location: "Arizona",
-    image: "/placeholder.svg?height=300&width=400",
-    events: [
-      { name: "Geology Talk", date: "June 25, 2023" },
-      { name: "Sunset Photography Tour", date: "July 5, 2023" }
-    ],
-    trails: [
-      { name: "Bright Angel Trail", difficulty: "Strenuous", length: "12 miles" },
-      { name: "South Kaibab Trail", difficulty: "Strenuous", length: "7 miles" }
-    ],
-    workingHours: "Open 24 hours"
-  }
-]
-
 export async function loader({ params }) {
   return { params };
 }
@@ -100,7 +50,7 @@ export function ParkPage() {
     <div className="container mx-auto px-4 py-8">
       <a href="/" className="inline-flex items-center text-blue-500 hover:text-blue-700 mb-6">
         <ChevronLeft className="w-4 h-4 mr-1" />
-        Back to all parks
+        Voltar
       </a>
       <div className="bg-white rounded-lg shadow-md overflow-hidden">
         <img src={park.image} alt={park.name} className="w-full h-64 object-cover" />
@@ -116,7 +66,7 @@ export function ParkPage() {
             <span>{park.workingHours}</span>
           </div>
           <div className="mb-6">
-            <h2 className="text-xl font-semibold mb-2">Upcoming Events</h2>
+            <h2 className="text-xl font-semibold mb-2">Eventos próximos</h2>
             <ul className="list-disc list-inside">
               {park.events.map((event, index) => (
                 <li key={index} className="mb-1">
@@ -126,7 +76,7 @@ export function ParkPage() {
             </ul>
           </div>
           <div className="mb-6">
-            <h2 className="text-xl font-semibold mb-2">Popular Trails</h2>
+            <h2 className="text-xl font-semibold mb-2">Trilhas populares</h2>
             <ul className="list-disc list-inside">
               {park.trails.map((trail, index) => (
                 <li key={index} className="mb-1">
@@ -136,7 +86,7 @@ export function ParkPage() {
             </ul>
           </div>
           <div>
-            <h2 className="text-xl font-semibold mb-2">Park Location</h2>
+            <h2 className="text-xl font-semibold mb-2">Localização</h2>
             <MapView parkName={park.name} location={park.location} />
           </div>
         </div>

@@ -58,7 +58,7 @@ export function ParkCard({ park }: { park: Park }) {
           className="flex items-center text-blue-500 hover:text-blue-700"
           onClick={() => setIsExpanded(!isExpanded)}
         >
-          {isExpanded ? "Show less" : "Show more"}
+          {isExpanded ? "Mostrar menos" : "Mostrar mais"}
           {isExpanded ? (
             <ChevronUp className="w-4 h-4 ml-1" />
           ) : (
@@ -67,7 +67,7 @@ export function ParkCard({ park }: { park: Park }) {
         </button>
         {isExpanded && (
           <div className="mt-4">
-            <h3 className="font-semibold mb-2">Upcoming Events:</h3>
+            <h3 className="font-semibold mb-2">Eventos:</h3>
             <ul className="list-disc list-inside mb-4">
               {park.events.map((event, index) => (
                 <li key={index}>
@@ -75,7 +75,7 @@ export function ParkCard({ park }: { park: Park }) {
                 </li>
               ))}
             </ul>
-            <h3 className="font-semibold mb-2">Popular Trails:</h3>
+            <h3 className="font-semibold mb-2">Trilhas:</h3>
             <ul className="list-disc list-inside">
               {park.trails.map((trail, index) => (
                 <li key={index}>
@@ -87,7 +87,7 @@ export function ParkCard({ park }: { park: Park }) {
               className="flex items-center text-green-500 hover:text-green-700 mt-4"
               onClick={() => setShowMap(!showMap)}
             >
-              {showMap ? "Hide map" : "Show map"}
+              {showMap ? "Hide map" : "Mostrar mapa"}
               <MapPin className="w-4 h-4 ml-1" />
             </button>
             {showMap && (
