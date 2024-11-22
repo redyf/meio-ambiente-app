@@ -3,6 +3,14 @@ import { ParkCard } from './park-card.tsx'
 const mockParks = [
   {
     id: 1,
+    name: "Parque Metropolitano de Pituaçu",
+    description: "A maior reserva ecológica de Salvador, com lago, trilhas, pedalinhos, quadras e museu.",
+    location: "Salvador, BA",
+    image: "/pituacu.jpg",
+    workingHours: "7h - 17h"
+  },
+  {
+    id: 2,
     name: "Yellowstone National Park",
     description: "America's first national park, known for its geothermal features and diverse wildlife.",
     location: "Wyoming, Montana, Idaho",
@@ -15,10 +23,10 @@ const mockParks = [
       { name: "Old Faithful Geyser Loop", difficulty: "Easy", length: "1.6 miles" },
       { name: "Grand Prismatic Spring Overlook Trail", difficulty: "Moderate", length: "1.2 miles" }
     ],
-    workingHours: "Open 24 hours"
+    workingHours: "Aberto 24 horas"
   },
   {
-    id: 2,
+    id: 3,
     name: "Yosemite National Park",
     description: "Famous for its giant sequoia trees, waterfalls, and granite cliffs like El Capitan and Half Dome.",
     location: "California",
@@ -31,10 +39,10 @@ const mockParks = [
       { name: "Mist Trail", difficulty: "Strenuous", length: "3 miles" },
       { name: "Lower Yosemite Fall Trail", difficulty: "Easy", length: "1 mile" }
     ],
-    workingHours: "Open 24 hours"
+    workingHours: "Aberto 24 horas"
   },
   {
-    id: 3,
+    id: 4,
     name: "Grand Canyon National Park",
     description: "Home to much of the immense Grand Canyon, with its layered bands of red rock.",
     location: "Arizona",
@@ -47,7 +55,7 @@ const mockParks = [
       { name: "Bright Angel Trail", difficulty: "Strenuous", length: "12 miles" },
       { name: "South Kaibab Trail", difficulty: "Strenuous", length: "7 miles" }
     ],
-    workingHours: "Open 24 hours"
+    workingHours: "Aberto 24 horas"
   }
 ]
 

@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { ChevronLeft, MapPin, Clock } from 'lucide-react'
-import { MapView } from '../../../components/map-view'
+import { MapView } from '../components/map-view.tsx'
+import { Form, useLoaderData } from "react-router-dom";
 
 interface ParkEvent {
   name: string
@@ -77,7 +78,12 @@ const mockParks: Park[] = [
   }
 ]
 
-export default function ParkPage({ params }: { params: { id: string } }) {
+export async function loader({ params }) {
+  return { params };
+}
+
+export function ParkPage() {
+  const { params } = useLoaderData();
   const [park, setPark] = useState<Park | null>(null)
 
   useEffect(() => {
